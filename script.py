@@ -9,28 +9,27 @@ headersList = {
 }
 
 
-# categories = [
-#     "fashionablemale", 
-#     "nextgenmale", 
-#     "entrepreneurmale", 
-#     "facemale", 
-#     "sociablemale",
-#     "sportspersonmale",
-#     "innovativemale",
+categories = [
+    "fashionablemale", 
+    "nextgenmale", 
+    "entrepreneurmale", 
+    "facemale", 
+    "sociablemale",
+    "sportspersonmale",
+    "innovativemale",
 
-#     "fashionablefemale",
-#     "nextgenfemale", 
-#     "entrepreneurfemale", 
-#     "facefemale", 
-#     "sociablefemale",
-#     "sportspersonfemale",
-#     "innovativefemale"
-# ]
+    "fashionablefemale",
+    "nextgenfemale", 
+    "entrepreneurfemale", 
+    "facefemale", 
+    "sociablefemale",
+    "sportspersonfemale",
+    "innovativefemale"
+]
 
-categories = ["facemale", "facefemale"]
+# categories = ["facemale", "sociablefemale"]
 
 db = []
-list_of_contestants = []
 
 def run(categories):
     for category in categories:
@@ -45,12 +44,8 @@ def run(categories):
             name = i["name"]
             votes = i.get("category")[0].get("votes")
             department =  i["department"]
-            constestant =  { "name": name, "votes": votes, "department": department, "id":id }
-            list_of_contestants.append(constestant)
-
-            # db[category] = 1
-            category_dict = {category:list_of_contestants}
-    db.append(category_dict)
+            constestant =  { "name": name, "votes": votes, "department": department, "id":id, "category":category }
+            db.append(constestant)
 
 
 
